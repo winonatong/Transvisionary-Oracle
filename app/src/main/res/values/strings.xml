@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Transvisionary Oracle</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="min_level">0</string>
+    <string name="max_level">8</string>
+    <string name="bonus_hack">HACKING BONUS:</string>
+    <string name="bonus_speed">SPEED BONUS:</string>
+
+</resources>
