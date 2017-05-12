@@ -422,7 +422,7 @@ class FortuneActivity : Activity() {
             dNext.setBounds(nextButtonPoint[0]?.x ?: 0, nextButtonPoint[0]?.y ?: 0, nextButtonPoint[1]?.x ?: 0, nextButtonPoint[1]?.y ?: 0)
             dNext.draw(canvas)
 
-            canvas.drawText("TELL FORTUNE", (nextButtonPoint[0]?.x ?: 0) + nextButtonWidth / 2, (nextButtonPoint[1]?.y ?: 0) - buttonBaseline * scale, paint)
+            canvas.drawText("ASK SHAPERS", (nextButtonPoint[0]?.x ?: 0) + nextButtonWidth / 2, (nextButtonPoint[1]?.y ?: 0) - buttonBaseline * scale, paint)
         }
 
         internal inner class ThroughList {
@@ -695,7 +695,7 @@ class FortuneActivity : Activity() {
             paint.strokeWidth = 1f
             paint.textSize = 70 * scale
             paint.textAlign = Paint.Align.CENTER
-            for (i in 0..resultStr.lastIndex) canvas.drawText(resultStr[i], offsetX, (offsetY * 1.2f - offsetX) / 2f + i * paint.textSize * 1.2f + 100f, paint)
+            for (i in 0..resultStr.lastIndex) canvas.drawText(resultStr[i], offsetX, (offsetY * 1.1f - offsetX) / 2f + i * paint.textSize * 1.2f + 100f, paint)
         }
 
 
