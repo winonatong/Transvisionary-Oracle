@@ -49,7 +49,7 @@ class MyActivity : Activity() {
         sp?.edit()?.putInt("viewCount", viewCount + 1)?.apply()
 
         try {
-            min = Integer.parseInt(sp?.getString("min_level", "0"))
+            min = Integer.parseInt(sp?.getString("min_level", "2"))
             Log.d(tag, "min:" + min)
         } catch (e: Exception) {
             Log.e(tag, "Can't translate minimum-level to int.")
