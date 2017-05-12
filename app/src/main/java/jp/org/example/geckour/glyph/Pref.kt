@@ -18,10 +18,10 @@ class Pref : android.preference.PreferenceActivity() {
         sp = PreferenceManager.getDefaultSharedPreferences(this)
         pref = this
         try {
-            min = Integer.parseInt(sp?.getString("min_level", "0"))
+            min = Integer.parseInt(sp?.getString("min_level", "2"))
             max = Integer.parseInt(sp?.getString("max_level", "8"))
         } catch (e: Exception) {
-            min = 0
+            min = 2
             max = 8
             Log.v("E", "Can't translate level into Integer. min:$min, max:$max")
         }

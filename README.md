@@ -1,11 +1,11 @@
 The Transvisionary Oracle
 =====
-note: Ingress is copyright 2015 Niantic Labs. This App is not affiliated with Niantic Labs
+note: Ingress is copyright 2017 Niantic Labs. This App is not affiliated with Niantic Labs
   
-Consult the Shapers on your future.
+Consult the Shapers about your future.
 
-This Fortune Telling App is made for the Magnus Reawakens art project submission by the San Francisco Enlightened.
+This Fortune Telling App is made for the 13 Magnus Reawakens art project submission by the San Francisco Enlightened.
 
-It is based on the Glyph practice app by geckour https://github.com/geckour/Glyph/issues).
+It is based on the Glyph practice app by geckour https://github.com/geckour/Glyph/
   
-Thanks to [Glyphtionary](http://glyphtionary.com/), many of sites provide patterns of Glyph sequence, and all of supporters.
+Thanks to [Glyphtionary](http://glyphtionary.com/) for being an authoritative source of glyphs and their meanings..
