@@ -68,6 +68,7 @@ class FortuneActivity : Activity() {
     }
 
     internal inner class FortuneView(context: Context) : SurfaceView(context), SurfaceHolder.Callback, Runnable {
+        val TAG = "FortuneActivity"
 
         val SHAPERS = arrayOf(
                 arrayOf("ABANDON", "6,4,0,2,9,8"),
@@ -247,9 +248,9 @@ class FortuneActivity : Activity() {
                 arrayOf("TOGETHER", "9,2,0,4,3,0"),
                 arrayOf("TRUTH", "3,0,1,4,0,2,3"),
                 arrayOf("UNBOUNDED", "0,4,3,2,1,6,5,10,9,8,7"),
-                arrayOf("[UNKNOWN]", "5,4,1,7,8,9,2,3,5"),
-                arrayOf("[UNKNOWN]", "10,5,0,2,9,8,7,6"),
-                arrayOf("[UNKNOWN]", "5,0,6,4,0,7,1,0,9,2,0,10,3,0,8"),
+                //arrayOf("[UNKNOWN]", "5,4,1,7,8,9,2,3,5"),
+                //arrayOf("[UNKNOWN]", "10,5,0,2,9,8,7,6"),
+                //arrayOf("[UNKNOWN]", "5,0,6,4,0,7,1,0,9,2,0,10,3,0,8"),
                 arrayOf("US", "3,4,8"),
                 arrayOf("USE", "0,1,6"),
                 arrayOf("VICTORY", "8,3,5,4,8"),
@@ -672,7 +673,7 @@ class FortuneActivity : Activity() {
             var glyphName = ArrayList<String>()
 
             for(shaper in SHAPERS) {
-                Log.v(tag, shaper[0] + shaper[1])
+//                Log.v(tag, shaper[0] + shaper[1])
 
                 val dotsSplit = shaper[1].split(",")
                 val throughListInRow = ThroughList(dotsSplit.toTypedArray())
@@ -695,7 +696,14 @@ class FortuneActivity : Activity() {
             paint.strokeWidth = 1f
             paint.textSize = 70 * scale
             paint.textAlign = Paint.Align.CENTER
-            for (i in 0..resultStr.lastIndex) canvas.drawText(resultStr[i], offsetX, (offsetY * 1.1f - offsetX) / 2f + i * paint.textSize * 1.2f + 100f, paint)
+            try {
+                for (i in 0..resultStr.lastIndex) {
+                    canvas.drawText(resultStr[i], offsetX, (offsetY * 1.1f - offsetX) / 2f + i * paint.textSize * 1.2f + 100f, paint)
+                }
+            } catch(e: IndexOutOfBoundsException) {
+                Log.e(TAG, "race condition?", e);
+            }
+
         }
 
 
@@ -898,7 +906,7 @@ class FortuneActivity : Activity() {
                     for (throughDot in throughList.dots) {
                         list += "$throughDot,"
                     }
-                    Log.v(tag, "throughList:$list")
+//                    Log.v(tag, "throughList:$list")
                     resetLocus()
                     if (throughList.dots.size > 0) {
                         putParticles(throughList, canvas!!)
